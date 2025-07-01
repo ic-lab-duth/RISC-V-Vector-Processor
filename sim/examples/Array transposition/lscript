@@ -1,0 +1,13 @@
+MEMORY
+{
+ram : ORIGIN = 0x0, LENGTH = 0x20000
+}
+SECTIONS
+{
+.text : { *(.text*) } > ram
+.data : { *(.data) }>ram
+.bss : { *(.bss) }>ram
+PROVIDE ( __heap_end =.);
+PROVIDE ( _end =.);
+}
+

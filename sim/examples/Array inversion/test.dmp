@@ -1,0 +1,33 @@
+
+test.o:	file format elf32-littleriscv
+
+Disassembly of section .text:
+
+00000000 <_start>:
+       0: 37 05 00 10  	lui	a0, 65536
+       4: 13 01 05 00  	mv	sp, a0
+       8: ef 00 80 00  	jal	0x10 <main>
+
+0000000c <hang>:
+       c: 6f 00 00 00  	j	0xc <hang>
+
+00000010 <main>:
+      10: 37 05 00 00  	lui	a0, 0
+      14: 13 05 05 0c  	addi	a0, a0, 192
+      18: 93 05 05 02  	addi	a1, a0, 32
+      1c: 13 06 00 02  	li	a2, 32
+      20: 57 70 06 0c  	vsetvli	zero, a2, e8, m1, ta, ma
+      24: 07 84 05 02  	vle8.v	v8, (a1)
+      28: b7 05 00 00  	lui	a1, 0
+      2c: 93 85 05 06  	addi	a1, a1, 96
+      30: 87 84 05 02  	vle8.v	v9, (a1)
+      34: 57 85 84 32  	vrgather.vv	v10, v8, v9
+      38: 07 04 05 02  	vle8.v	v8, (a0)
+      3c: 37 05 00 00  	lui	a0, 0
+      40: 13 05 05 08  	addi	a0, a0, 128
+      44: 27 05 05 02  	vse8.v	v10, (a0)
+      48: 57 85 84 32  	vrgather.vv	v10, v8, v9
+      4c: 13 05 05 02  	addi	a0, a0, 32
+      50: 27 05 05 02  	vse8.v	v10, (a0)
+      54: 13 05 00 00  	li	a0, 0
+      58: 67 80 00 00  	ret
