@@ -57,7 +57,7 @@ _**TB Level Hierarchy:**_
 # Pending Features
 
 - CSR, SYSTEM instructions and Priviledged ISA
-- Extend the list of supported instructions for the 'F' extension
+- Extend the list of supported VOPF instructions
 - Extend the supported permutation instructions 
 - Add additional Examples
 
