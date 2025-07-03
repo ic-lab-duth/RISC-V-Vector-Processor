@@ -17,7 +17,7 @@ Features:
 - Configurable **vector length**, **lane width**, and **number of lanes**
 - Support for variable SEW configurations (8/16/32/64)  across VOPI, VOPM, and VOPF operations
 - Compatible with **Vector-Vector**, **Vector-Scalar**, and **Vector-Immediate** operations
-- Implements commonly used permutation instructions for SEW=8 configuration, including:
+- Implements commonly used permutation instructions, including:
   - vrgather
   - vslide1down
   - vslide1up
@@ -58,7 +58,7 @@ _**TB Level Hierarchy:**_
 
 - CSR, SYSTEM instructions and Priviledged ISA
 - Extend the list of supported instructions for the 'F' extension
-- Modify decoding stage of the vector core to support permutations for SEW>8 configuration
+- Extend the supported permutation instructions 
 - Add additional Examples
 
 ## Reference
